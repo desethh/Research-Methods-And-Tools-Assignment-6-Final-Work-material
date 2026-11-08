@@ -1,0 +1,68 @@
+{
+  "run_id": "qwen_rep2",
+  "backend": "ollama",
+  "model": "qwen3.5:9b",
+  "started_utc": "2026-10-20T19:52:29.942353+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.3",
+  "think": false,
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+      "qwen35"
+    ],
+    "parameter_size": "9.7B",
+    "quantization_level": "Q4_K_M"
+  },
+  "ollama_version": "0.40.3",
+  "model_default_parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 2048
+  }
+}
+[1/40] S01 structured tokens=506 t=8.92s err=- :: ' Therefore, the code is vulnerable.\n\n{"label": "Vulnerable"}'
+[2/40] S05 structured tokens=472 t=8.41s err=- :: 'o an XPath Injection vulnerability.\n\n{"label": "Vulnerable"}'
+[3/40] S06 basic      tokens=8 t=2.45s err=- :: '{"label": "Vulnerable"}'
+[4/40] S15 structured tokens=445 t=8.16s err=- :: 'specifically XSS or Log Injection).\n\n{"label": "Vulnerable"}'
+[5/40] S07 structured tokens=573 t=9.88s err=- :: 'itization strategy for the given context.\n\n{"label": "Safe"}'
+[6/40] S17 structured tokens=336 t=6.71s err=- :: ' queries with untrusted user input.\n\n{"label": "Vulnerable"}'
+[7/40] S12 basic      tokens=8 t=2.43s err=- :: '{"label": "Vulnerable"}'
+[8/40] S04 structured tokens=319 t=6.54s err=- :: 'hrough validation and exception handling.\n\n{"label": "Safe"}'
+[9/40] S10 structured tokens=381 t=7.29s err=- :: 'ect. This prevents Open Redirect attacks.\n\n{"label": "Safe"}'
+[10/40] S17 basic      tokens=8 t=2.51s err=- :: '{"label": "Vulnerable"}'
+[11/40] S03 basic      tokens=8 t=2.44s err=- :: '{"label": "Vulnerable"}'
+[12/40] S06 structured tokens=420 t=7.9s err=- :: 'put flowing into the sensitive operation.\n\n{"label": "Safe"}'
+[13/40] S16 basic      tokens=7 t=2.44s err=- :: '{"label": "Safe"}'
+[14/40] S09 structured tokens=424 t=7.85s err=- :: 've operation (setting a redirect header).\n\n{"label": "Safe"}'
+[15/40] S02 structured tokens=563 t=9.65s err=- :: 'e without sanitization or encoding.\n\n{"label": "Vulnerable"}'
+[16/40] S14 basic      tokens=7 t=2.43s err=- :: '{"label": "Safe"}'
+[17/40] S18 basic      tokens=7 t=2.48s err=- :: '{"label": "Safe"}'
+[18/40] S11 structured tokens=307 t=6.49s err=- :: 'th Traversal (Arbitrary File Read).\n\n{"label": "Vulnerable"}'
+[19/40] S15 basic      tokens=7 t=2.41s err=- :: '{"label": "Safe"}'
+[20/40] S10 basic      tokens=8 t=2.4s err=- :: '{"label": "Vulnerable"}'
+[21/40] S20 basic      tokens=8 t=2.41s err=- :: '{"label": "Vulnerable"}'
+[22/40] S14 structured tokens=480 t=8.64s err=- :: 'access. It safely handles parsing errors.\n\n{"label": "Safe"}'
+[23/40] S19 structured tokens=2048 t=28.82s err=- :: 'nt overrides any potential intent.\nOkay, I will proceed with'
+[24/40] S16 structured tokens=567 t=9.71s err=- :: 'plied data.\n\n5. **Classification**: Safe.\n\n{"label": "Safe"}'
+[25/40] S20 structured tokens=249 t=5.68s err=- :: 'lnerability.\n\n**5. Classification:**\n{"label": "Vulnerable"}'
+[26/40] S01 basic      tokens=7 t=2.38s err=- :: '{"label": "Safe"}'
+[27/40] S11 basic      tokens=8 t=2.36s err=- :: '{"label": "Vulnerable"}'
+[28/40] S18 structured tokens=316 t=6.63s err=- :: 'input handling via parameterized queries.\n\n{"label": "Safe"}'
+[29/40] S04 basic      tokens=7 t=2.4s err=- :: '{"label": "Safe"}'
+[30/40] S09 basic      tokens=8 t=2.45s err=- :: '{"label": "Vulnerable"}'
+[31/40] S13 structured tokens=337 t=6.92s err=- :: 'ed string rather than user-supplied data.\n\n{"label": "Safe"}'
+[32/40] S08 structured tokens=425 t=7.89s err=- :: 'ns a vulnerability (Reflected XSS).\n\n{"label": "Vulnerable"}'
+[33/40] S19 basic      tokens=8 t=2.46s err=- :: '{"label": "Vulnerable"}'
+[34/40] S03 structured tokens=321 t=6.52s err=- :: 'flected Cross-Site Scripting (XSS).\n\n{"label": "Vulnerable"}'
+[35/40] S02 basic      tokens=8 t=2.41s err=- :: '{"label": "Vulnerable"}'
+[36/40] S07 basic      tokens=8 t=2.52s err=- :: '{"label": "Vulnerable"}'
+[37/40] S05 basic      tokens=8 t=2.41s err=- :: '{"label": "Vulnerable"}'
+[38/40] S13 basic      tokens=8 t=2.34s err=- :: '{"label": "Vulnerable"}'
+[39/40] S12 structured tokens=358 t=7.02s err=- :: ' of user input into an HTTP header.\n\n{"label": "Vulnerable"}'
+[40/40] S08 basic      tokens=7 t=2.43s err=- :: '{"label": "Safe"}'

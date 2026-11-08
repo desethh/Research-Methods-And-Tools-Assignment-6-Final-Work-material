@@ -1,0 +1,201 @@
+run_id,model,role,condition,sample_id,cwe,truth,prediction,correct,output_tokens
+claude_agents,Claude Sonnet (subagent),secondary,basic,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Safe,0,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S02,CWE83_XSS_Attribute,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S02,CWE83_XSS_Attribute,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S06,CWE601_Open_Redirect,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S06,CWE601_Open_Redirect,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S07,CWE643_Xpath_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S07,CWE643_Xpath_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S08,CWE80_XSS,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S08,CWE80_XSS,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S09,CWE113_HTTP_Response_Splitting,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S09,CWE113_HTTP_Response_Splitting,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S13,CWE36_Absolute_Path_Traversal,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S13,CWE36_Absolute_Path_Traversal,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S15,CWE690_NULL_Deref_From_Return,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S15,CWE690_NULL_Deref_From_Return,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S16,CWE80_XSS,Safe,Vulnerable,0,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S16,CWE80_XSS,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S18,CWE89_SQL_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S18,CWE89_SQL_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S19,CWE78_OS_Command_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S19,CWE78_OS_Command_Injection,Safe,Safe,1,
+claude_agents,Claude Sonnet (subagent),secondary,basic,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,
+claude_agents,Claude Sonnet (subagent),secondary,structured,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,
+qwen_primary,Qwen3.5:9B,primary,basic,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Safe,0,7
+qwen_primary,Qwen3.5:9B,primary,structured,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Vulnerable,1,506
+qwen_primary,Qwen3.5:9B,primary,basic,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,563
+qwen_primary,Qwen3.5:9B,primary,basic,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,321
+qwen_primary,Qwen3.5:9B,primary,basic,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,7
+qwen_primary,Qwen3.5:9B,primary,structured,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,319
+qwen_primary,Qwen3.5:9B,primary,basic,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,472
+qwen_primary,Qwen3.5:9B,primary,basic,S06,CWE601_Open_Redirect,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S06,CWE601_Open_Redirect,Safe,Safe,1,420
+qwen_primary,Qwen3.5:9B,primary,basic,S07,CWE643_Xpath_Injection,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S07,CWE643_Xpath_Injection,Safe,Safe,1,573
+qwen_primary,Qwen3.5:9B,primary,basic,S08,CWE80_XSS,Vulnerable,Safe,0,7
+qwen_primary,Qwen3.5:9B,primary,structured,S08,CWE80_XSS,Vulnerable,Vulnerable,1,425
+qwen_primary,Qwen3.5:9B,primary,basic,S09,CWE113_HTTP_Response_Splitting,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S09,CWE113_HTTP_Response_Splitting,Safe,Safe,1,424
+qwen_primary,Qwen3.5:9B,primary,basic,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S10,CWE601_Open_Redirect,Vulnerable,Safe,0,381
+qwen_primary,Qwen3.5:9B,primary,basic,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,307
+qwen_primary,Qwen3.5:9B,primary,basic,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,358
+qwen_primary,Qwen3.5:9B,primary,basic,S13,CWE36_Absolute_Path_Traversal,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S13,CWE36_Absolute_Path_Traversal,Safe,Safe,1,337
+qwen_primary,Qwen3.5:9B,primary,basic,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,7
+qwen_primary,Qwen3.5:9B,primary,structured,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,480
+qwen_primary,Qwen3.5:9B,primary,basic,S15,CWE690_NULL_Deref_From_Return,Safe,Safe,1,7
+qwen_primary,Qwen3.5:9B,primary,structured,S15,CWE690_NULL_Deref_From_Return,Safe,Vulnerable,0,445
+qwen_primary,Qwen3.5:9B,primary,basic,S16,CWE80_XSS,Safe,Safe,1,7
+qwen_primary,Qwen3.5:9B,primary,structured,S16,CWE80_XSS,Safe,Safe,1,567
+qwen_primary,Qwen3.5:9B,primary,basic,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,336
+qwen_primary,Qwen3.5:9B,primary,basic,S18,CWE89_SQL_Injection,Safe,Safe,1,7
+qwen_primary,Qwen3.5:9B,primary,structured,S18,CWE89_SQL_Injection,Safe,Safe,1,316
+qwen_primary,Qwen3.5:9B,primary,basic,S19,CWE78_OS_Command_Injection,Safe,Vulnerable,0,8
+qwen_primary,Qwen3.5:9B,primary,structured,S19,CWE78_OS_Command_Injection,Safe,UNPARSED,0,2048
+qwen_primary,Qwen3.5:9B,primary,basic,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,8
+qwen_primary,Qwen3.5:9B,primary,structured,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,249
+qwen_rep2,Qwen3.5:9B,repeat,basic,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Safe,0,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Vulnerable,1,506
+qwen_rep2,Qwen3.5:9B,repeat,basic,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,563
+qwen_rep2,Qwen3.5:9B,repeat,basic,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,321
+qwen_rep2,Qwen3.5:9B,repeat,basic,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,319
+qwen_rep2,Qwen3.5:9B,repeat,basic,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,472
+qwen_rep2,Qwen3.5:9B,repeat,basic,S06,CWE601_Open_Redirect,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S06,CWE601_Open_Redirect,Safe,Safe,1,420
+qwen_rep2,Qwen3.5:9B,repeat,basic,S07,CWE643_Xpath_Injection,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S07,CWE643_Xpath_Injection,Safe,Safe,1,573
+qwen_rep2,Qwen3.5:9B,repeat,basic,S08,CWE80_XSS,Vulnerable,Safe,0,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S08,CWE80_XSS,Vulnerable,Vulnerable,1,425
+qwen_rep2,Qwen3.5:9B,repeat,basic,S09,CWE113_HTTP_Response_Splitting,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S09,CWE113_HTTP_Response_Splitting,Safe,Safe,1,424
+qwen_rep2,Qwen3.5:9B,repeat,basic,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S10,CWE601_Open_Redirect,Vulnerable,Safe,0,381
+qwen_rep2,Qwen3.5:9B,repeat,basic,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,307
+qwen_rep2,Qwen3.5:9B,repeat,basic,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,358
+qwen_rep2,Qwen3.5:9B,repeat,basic,S13,CWE36_Absolute_Path_Traversal,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S13,CWE36_Absolute_Path_Traversal,Safe,Safe,1,337
+qwen_rep2,Qwen3.5:9B,repeat,basic,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,480
+qwen_rep2,Qwen3.5:9B,repeat,basic,S15,CWE690_NULL_Deref_From_Return,Safe,Safe,1,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S15,CWE690_NULL_Deref_From_Return,Safe,Vulnerable,0,445
+qwen_rep2,Qwen3.5:9B,repeat,basic,S16,CWE80_XSS,Safe,Safe,1,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S16,CWE80_XSS,Safe,Safe,1,567
+qwen_rep2,Qwen3.5:9B,repeat,basic,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,336
+qwen_rep2,Qwen3.5:9B,repeat,basic,S18,CWE89_SQL_Injection,Safe,Safe,1,7
+qwen_rep2,Qwen3.5:9B,repeat,structured,S18,CWE89_SQL_Injection,Safe,Safe,1,316
+qwen_rep2,Qwen3.5:9B,repeat,basic,S19,CWE78_OS_Command_Injection,Safe,Vulnerable,0,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S19,CWE78_OS_Command_Injection,Safe,UNPARSED,0,2048
+qwen_rep2,Qwen3.5:9B,repeat,basic,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep2,Qwen3.5:9B,repeat,structured,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,249
+qwen_rep3,Qwen3.5:9B,repeat,basic,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Safe,0,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Vulnerable,1,506
+qwen_rep3,Qwen3.5:9B,repeat,basic,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,563
+qwen_rep3,Qwen3.5:9B,repeat,basic,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,321
+qwen_rep3,Qwen3.5:9B,repeat,basic,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,319
+qwen_rep3,Qwen3.5:9B,repeat,basic,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,472
+qwen_rep3,Qwen3.5:9B,repeat,basic,S06,CWE601_Open_Redirect,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S06,CWE601_Open_Redirect,Safe,Safe,1,420
+qwen_rep3,Qwen3.5:9B,repeat,basic,S07,CWE643_Xpath_Injection,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S07,CWE643_Xpath_Injection,Safe,Safe,1,573
+qwen_rep3,Qwen3.5:9B,repeat,basic,S08,CWE80_XSS,Vulnerable,Safe,0,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S08,CWE80_XSS,Vulnerable,Vulnerable,1,425
+qwen_rep3,Qwen3.5:9B,repeat,basic,S09,CWE113_HTTP_Response_Splitting,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S09,CWE113_HTTP_Response_Splitting,Safe,Safe,1,424
+qwen_rep3,Qwen3.5:9B,repeat,basic,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S10,CWE601_Open_Redirect,Vulnerable,Safe,0,381
+qwen_rep3,Qwen3.5:9B,repeat,basic,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,307
+qwen_rep3,Qwen3.5:9B,repeat,basic,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,358
+qwen_rep3,Qwen3.5:9B,repeat,basic,S13,CWE36_Absolute_Path_Traversal,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S13,CWE36_Absolute_Path_Traversal,Safe,Safe,1,337
+qwen_rep3,Qwen3.5:9B,repeat,basic,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Safe,0,480
+qwen_rep3,Qwen3.5:9B,repeat,basic,S15,CWE690_NULL_Deref_From_Return,Safe,Safe,1,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S15,CWE690_NULL_Deref_From_Return,Safe,Vulnerable,0,445
+qwen_rep3,Qwen3.5:9B,repeat,basic,S16,CWE80_XSS,Safe,Safe,1,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S16,CWE80_XSS,Safe,Safe,1,567
+qwen_rep3,Qwen3.5:9B,repeat,basic,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,336
+qwen_rep3,Qwen3.5:9B,repeat,basic,S18,CWE89_SQL_Injection,Safe,Safe,1,7
+qwen_rep3,Qwen3.5:9B,repeat,structured,S18,CWE89_SQL_Injection,Safe,Safe,1,316
+qwen_rep3,Qwen3.5:9B,repeat,basic,S19,CWE78_OS_Command_Injection,Safe,Vulnerable,0,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S19,CWE78_OS_Command_Injection,Safe,UNPARSED,0,2048
+qwen_rep3,Qwen3.5:9B,repeat,basic,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,8
+qwen_rep3,Qwen3.5:9B,repeat,structured,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,249
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S01,CWE690_NULL_Deref_From_Return,Vulnerable,Vulnerable,1,478
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S01,CWE690_NULL_Deref_From_Return,Vulnerable,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S02,CWE83_XSS_Attribute,Safe,Vulnerable,0,739
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S02,CWE83_XSS_Attribute,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,176
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S03,CWE83_XSS_Attribute,Vulnerable,Vulnerable,1,1476
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S04,CWE606_Unchecked_Loop_Condition,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S04,CWE606_Unchecked_Loop_Condition,Safe,Safe,1,1945
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,1750
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S05,CWE643_Xpath_Injection,Vulnerable,Vulnerable,1,1479
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S06,CWE601_Open_Redirect,Safe,Vulnerable,0,325
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S06,CWE601_Open_Redirect,Safe,Safe,1,1950
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S07,CWE643_Xpath_Injection,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S07,CWE643_Xpath_Injection,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S08,CWE80_XSS,Vulnerable,Vulnerable,1,306
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S08,CWE80_XSS,Vulnerable,Vulnerable,1,1996
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S09,CWE113_HTTP_Response_Splitting,Safe,Vulnerable,0,581
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S09,CWE113_HTTP_Response_Splitting,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,289
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S10,CWE601_Open_Redirect,Vulnerable,Vulnerable,1,1029
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,947
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S11,CWE36_Absolute_Path_Traversal,Vulnerable,Vulnerable,1,1308
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,619
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S12,CWE113_HTTP_Response_Splitting,Vulnerable,Vulnerable,1,1397
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S13,CWE36_Absolute_Path_Traversal,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S13,CWE36_Absolute_Path_Traversal,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,Vulnerable,1,339
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S14,CWE606_Unchecked_Loop_Condition,Vulnerable,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S15,CWE690_NULL_Deref_From_Return,Safe,Vulnerable,0,433
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S15,CWE690_NULL_Deref_From_Return,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S16,CWE80_XSS,Safe,Safe,1,390
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S16,CWE80_XSS,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,583
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S17,CWE89_SQL_Injection,Vulnerable,Vulnerable,1,963
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S18,CWE89_SQL_Injection,Safe,Safe,1,1950
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S18,CWE89_SQL_Injection,Safe,Safe,1,1866
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S19,CWE78_OS_Command_Injection,Safe,Safe,1,1050
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S19,CWE78_OS_Command_Injection,Safe,UNPARSED,0,2048
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,312
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,S20,CWE78_OS_Command_Injection,Vulnerable,Vulnerable,1,1336

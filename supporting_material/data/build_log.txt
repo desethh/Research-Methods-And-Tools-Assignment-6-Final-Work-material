@@ -1,0 +1,23 @@
+excluded (inconsistent ground truth): ['CWE129_Improper_Validation_of_Array_Index', 'CWE190_Integer_Overflow', 'CWE191_Integer_Underflow', 'CWE369_Divide_by_Zero', 'CWE400_Resource_Exhaustion', 'CWE789_Uncontrolled_Mem_Alloc']
+eligible CWEs: 15 ['CWE113_HTTP_Response_Splitting', 'CWE15_External_Control_of_System_or_Configuration_Setting', 'CWE23_Relative_Path_Traversal', 'CWE36_Absolute_Path_Traversal', 'CWE470_Unsafe_Reflection', 'CWE601_Open_Redirect', 'CWE606_Unchecked_Loop_Condition', 'CWE643_Xpath_Injection', 'CWE690_NULL_Deref_From_Return', 'CWE78_OS_Command_Injection', 'CWE80_XSS', 'CWE81_XSS_Error_Message', 'CWE83_XSS_Attribute', 'CWE89_SQL_Injection', 'CWE90_LDAP_Injection']
+selected CWEs: ['CWE36_Absolute_Path_Traversal', 'CWE78_OS_Command_Injection', 'CWE80_XSS', 'CWE83_XSS_Attribute', 'CWE89_SQL_Injection', 'CWE113_HTTP_Response_Splitting', 'CWE601_Open_Redirect', 'CWE606_Unchecked_Loop_Condition', 'CWE643_Xpath_Injection', 'CWE690_NULL_Deref_From_Return']
+S01 Vulnerable CWE690_NULL_Deref_From_Return bad 17 leaks: -
+S02 Safe CWE83_XSS_Attribute goodG2B 19 leaks: -
+S03 Vulnerable CWE83_XSS_Attribute bad 19 leaks: -
+S04 Safe CWE606_Unchecked_Loop_Condition goodB2G 32 leaks: -
+S05 Vulnerable CWE643_Xpath_Injection bad 48 leaks: -
+S06 Safe CWE601_Open_Redirect goodG2B 33 leaks: -
+S07 Safe CWE643_Xpath_Injection goodB2G 48 leaks: -
+S08 Vulnerable CWE80_XSS bad 19 leaks: -
+S09 Safe CWE113_HTTP_Response_Splitting goodB2G 21 leaks: -
+S10 Vulnerable CWE601_Open_Redirect bad 33 leaks: -
+S11 Vulnerable CWE36_Absolute_Path_Traversal bad 76 leaks: -
+S12 Vulnerable CWE113_HTTP_Response_Splitting bad 20 leaks: -
+S13 Safe CWE36_Absolute_Path_Traversal goodG2B 76 leaks: -
+S14 Vulnerable CWE606_Unchecked_Loop_Condition bad 30 leaks: -
+S15 Safe CWE690_NULL_Deref_From_Return goodB2G 19 leaks: -
+S16 Safe CWE80_XSS goodG2B 19 leaks: -
+S17 Vulnerable CWE89_SQL_Injection bad 72 leaks: -
+S18 Safe CWE89_SQL_Injection goodB2G 73 leaks: -
+S19 Safe CWE78_OS_Command_Injection goodG2B 28 leaks: -
+S20 Vulnerable CWE78_OS_Command_Injection bad 28 leaks: -

@@ -1,0 +1,21 @@
+S01 Vulnerable bad lines 26-38 manifest flaws: [(31, 'CWE-690: Null Deref from Return'), (34, 'CWE-690: Null Deref from Return')] -> OK
+S02 Safe goodG2B lines 47-60 manifest flaws: [(31, 'CWE-083: Improper Neutralization of Script in Attributes in a Web Page'), (36, 'CWE-083: Improper Neutralization of Script in Attributes in a Web Page')] -> OK
+S03 Vulnerable bad lines 26-39 manifest flaws: [(31, 'CWE-083: Improper Neutralization of Script in Attributes in a Web Page'), (36, 'CWE-083: Improper Neutralization of Script in Attributes in a Web Page')] -> OK
+S04 Safe goodB2G lines 87-114 manifest flaws: [(32, 'CWE-606: Unchecked Input for Loop Condition'), (48, 'CWE-606: Unchecked Input for Loop Condition')] -> OK
+S05 Vulnerable bad lines 33-74 manifest flaws: [(38, "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')"), (68, "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')")] -> OK
+S06 Safe goodG2B lines 64-91 manifest flaws: [(52, "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"), (34, "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')")] -> OK
+S07 Safe goodB2G lines 127-166 manifest flaws: [(38, "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')"), (68, "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')")] -> OK
+S08 Vulnerable bad lines 25-38 manifest flaws: [(30, 'CWE-080: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)'), (35, 'CWE-080: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)')] -> OK
+S09 Safe goodB2G lines 66-80 manifest flaws: [(33, "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')"), (38, "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')")] -> OK
+S10 Vulnerable bad lines 29-56 manifest flaws: [(52, "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"), (34, "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')")] -> OK
+S11 Vulnerable bad lines 29-98 manifest flaws: [(37, 'CWE-036: Absolute Path Traversal'), (34, 'CWE-036: Absolute Path Traversal')] -> OK
+S12 Vulnerable bad lines 28-41 manifest flaws: [(33, "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')"), (38, "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')")] -> OK
+S13 Safe goodG2B lines 106-175 manifest flaws: [(37, 'CWE-036: Absolute Path Traversal'), (34, 'CWE-036: Absolute Path Traversal')] -> OK
+S14 Vulnerable bad lines 27-51 manifest flaws: [(32, 'CWE-606: Unchecked Input for Loop Condition'), (48, 'CWE-606: Unchecked Input for Loop Condition')] -> OK
+S15 Safe goodB2G lines 62-76 manifest flaws: [(31, 'CWE-690: Null Deref from Return'), (34, 'CWE-690: Null Deref from Return')] -> OK
+S16 Safe goodG2B lines 46-59 manifest flaws: [(30, 'CWE-080: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)'), (35, 'CWE-080: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)')] -> OK
+S17 Vulnerable bad lines 30-94 manifest flaws: [(35, "CWE-089: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"), (50, "CWE-089: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')")] -> OK
+S18 Safe goodB2G lines 170-235 manifest flaws: [(35, "CWE-089: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"), (50, "CWE-089: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')")] -> OK
+S19 Safe goodG2B lines 57-80 manifest flaws: [(31, "CWE-078: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"), (46, "CWE-078: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')")] -> OK
+S20 Vulnerable bad lines 26-49 manifest flaws: [(31, "CWE-078: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"), (46, "CWE-078: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')")] -> OK
+ALL CONSISTENT

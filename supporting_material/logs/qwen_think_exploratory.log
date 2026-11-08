@@ -1,0 +1,68 @@
+{
+  "run_id": "qwen_think_exploratory",
+  "backend": "ollama",
+  "model": "qwen3.5:9b",
+  "started_utc": "2026-10-20T20:00:11.449600+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.3",
+  "think": true,
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+      "qwen35"
+    ],
+    "parameter_size": "9.7B",
+    "quantization_level": "Q4_K_M"
+  },
+  "ollama_version": "0.40.3",
+  "model_default_parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 2048
+  }
+}
+[1/40] S03 structured tokens=1476 t=21.56s err=- :: 'endering) without adequate control.\n\n{"label": "Vulnerable"}'
+[2/40] S18 structured tokens=1866 t=26.76s err=- :: 'Injection).\n\n5. **Classification**: Safe.\n\n{"label": "Safe"}'
+[3/40] S07 basic      tokens=2048 t=29.2s err=- :: ''
+[4/40] S10 structured tokens=1029 t=15.84s err=- :: '\n\n5. **Classification**: Vulnerable\n\n{"label": "Vulnerable"}'
+[5/40] S08 structured tokens=1996 t=28.23s err=- :: '\n5. **Classification**: Vulnerable.\n\n{"label": "Vulnerable"}'
+[6/40] S06 basic      tokens=325 t=6.56s err=- :: '{"label": "Vulnerable"}'
+[7/40] S16 basic      tokens=390 t=7.41s err=- :: '{"label": "Safe"}'
+[8/40] S11 structured tokens=1308 t=19.16s err=- :: '\n\n5. **Classification**: Vulnerable\n\n{"label": "Vulnerable"}'
+[9/40] S05 basic      tokens=1750 t=25.06s err=- :: '{"label": "Vulnerable"}'
+[10/40] S06 structured tokens=1950 t=27.49s err=- :: 'ocess user-supplied data for redirection.\n\n{"label": "Safe"}'
+[11/40] S20 structured tokens=1336 t=19.6s err=- :: 'mmand execution without protection.\n\n{"label": "Vulnerable"}'
+[12/40] S01 basic      tokens=478 t=8.44s err=- :: '{"label": "Vulnerable"}'
+[13/40] S15 basic      tokens=433 t=7.92s err=- :: '{"label": "Vulnerable"}'
+[14/40] S08 basic      tokens=306 t=6.24s err=- :: '{"label": "Vulnerable"}'
+[15/40] S20 basic      tokens=312 t=6.4s err=- :: '{"label": "Vulnerable"}'
+[16/40] S10 basic      tokens=289 t=6.05s err=- :: '{"label": "Vulnerable"}'
+[17/40] S12 basic      tokens=619 t=10.31s err=- :: '{"label": "Vulnerable"}'
+[18/40] S16 structured tokens=2048 t=28.65s err=- :: ''
+[19/40] S14 structured tokens=2048 t=28.86s err=- :: ''
+[20/40] S13 basic      tokens=2048 t=28.9s err=- :: ''
+[21/40] S09 structured tokens=2048 t=29.03s err=- :: ''
+[22/40] S17 basic      tokens=583 t=9.82s err=- :: '{"label": "Vulnerable"}'
+[23/40] S04 structured tokens=1945 t=27.49s err=- :: 'es not expose it to sensitive operations.\n\n{"label": "Safe"}'
+[24/40] S14 basic      tokens=339 t=6.74s err=- :: '{"label": "Vulnerable"}'
+[25/40] S19 structured tokens=2048 t=28.9s err=- :: ''
+[26/40] S07 structured tokens=2048 t=28.89s err=- :: ''
+[27/40] S02 basic      tokens=739 t=11.96s err=- :: '{"label": "Vulnerable"}'
+[28/40] S01 structured tokens=2048 t=29.03s err=- :: ''
+[29/40] S17 structured tokens=963 t=15.06s err=- :: 'rity vulnerability (SQL Injection).\n\n{"label": "Vulnerable"}'
+[30/40] S09 basic      tokens=581 t=9.91s err=- :: '{"label": "Vulnerable"}'
+[31/40] S15 structured tokens=2048 t=29.07s err=- :: ''
+[32/40] S19 basic      tokens=1050 t=16.06s err=- :: '{"label": "Safe"}'
+[33/40] S12 structured tokens=1397 t=20.55s err=- :: '.\n5. **Classification**: Vulnerable\n\n{"label": "Vulnerable"}'
+[34/40] S04 basic      tokens=2048 t=28.86s err=- :: ''
+[35/40] S18 basic      tokens=1950 t=27.7s err=- :: '{"label": "Safe"}'
+[36/40] S03 basic      tokens=176 t=4.68s err=- :: '{"label": "Vulnerable"}'
+[37/40] S02 structured tokens=2048 t=28.98s err=- :: ''
+[38/40] S13 structured tokens=2048 t=29.18s err=- :: ''
+[39/40] S05 structured tokens=1479 t=21.76s err=- :: 'nput sanitization in XPath queries.\n\n{"label": "Vulnerable"}'
+[40/40] S11 basic      tokens=947 t=14.62s err=- :: '{"label": "Vulnerable"}'

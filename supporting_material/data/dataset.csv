@@ -1,0 +1,731 @@
+sample_id,label,cwe,juliet_file,juliet_method,flow_variant,reason,loc,code_sha256,leak_tokens,source_url,dataset_version,language,code
+S01,Vulnerable,CWE690_NULL_Deref_From_Return,src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_trim_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: Call trim() on possibly null object,17,df7172d954de2a53,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        String stringTrimmed = data.trim();
+
+        IO.writeLine(stringTrimmed);
+
+    }
+}
+"
+S02,Safe,CWE83_XSS_Attribute,src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getParameter_Servlet_01.java,goodG2B,01,Juliet goodG2B(): data comes from a trusted source (A hardcoded string); same sink as bad().,19,bb0e8ebb6888707f,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = ""foo"";
+
+        if (data != null)
+        {
+
+            response.getWriter().println(""<br>result - <img src=\"""" + data + ""\"">"");
+        }
+
+    }
+}
+"
+S03,Vulnerable,CWE83_XSS_Attribute,src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: printlnServlet XSS in img src attribute,19,71b077714963e369,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+
+            response.getWriter().println(""<br>result - <img src=\"""" + data + ""\"">"");
+        }
+
+    }
+}
+"
+S04,Safe,CWE606_Unchecked_Loop_Condition,src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__getParameter_Servlet_01.java,goodB2G,01,"Juliet goodB2G(): same untrusted source, sink protected. GoodSink: validate loop variable",32,6d3d8ef87fec2407,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine(""Invalid response. Numeric input expected. Assuming 1."");
+            numberOfLoops = 1;
+        }
+
+        if (numberOfLoops >= 0 && numberOfLoops <= 5)
+        {
+            for (int i=0; i < numberOfLoops; i++)
+            {
+                IO.writeLine(""hello world"");
+            }
+        }
+
+    }
+}
+"
+S05,Vulnerable,CWE643_Xpath_Injection,src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: user input is used without validate,48,cbbf329087f763a8,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        String xmlFile = null;
+        if(System.getProperty(""os.name"").toLowerCase().indexOf(""win"") >= 0)
+        {
+
+            xmlFile = ""\\data\\users.xml"";
+        }
+        else
+        {
+
+            xmlFile = ""./data/users.xml"";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split(""||"");
+            if (tokens.length < 2)
+            {
+                return;
+            }
+            String username = tokens[0];
+            String password = tokens[1];
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+
+            String query = ""//users/user[name/text()='"" + username +
+                           ""' and pass/text()='"" + password + ""']"" +
+                           ""/secret/text()"";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+"
+S06,Safe,CWE601_Open_Redirect,src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_getParameter_Servlet_01.java,goodG2B,01,Juliet goodG2B(): data comes from a trusted source (A hardcoded string); same sink as bad().,33,6ff7f33920fc4476,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = ""foo"";
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write(""Invalid redirect URL"");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+"
+S07,Safe,CWE643_Xpath_Injection,src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_01.java,goodB2G,01,"Juliet goodB2G(): same untrusted source, sink protected. GoodSink: validate input through StringEscapeUtils",48,17936543d9402973,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        String xmlFile = null;
+        if(System.getProperty(""os.name"").toLowerCase().indexOf(""win"") >= 0)
+        {
+
+            xmlFile = ""\\data\\users.xml"";
+        }
+        else
+        {
+
+            xmlFile = ""./data/users.xml"";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split(""||"");
+            if( tokens.length < 2 )
+            {
+                return;
+            }
+
+            String username = StringEscapeUtils.escapeXml(tokens[0]);
+            String password = StringEscapeUtils.escapeXml(tokens[1]);
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+            String query = ""//users/user[name/text()='"" + username +
+                           ""' and pass/text()='"" + password + ""']"" +
+                           ""/secret/text()"";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+"
+S08,Vulnerable,CWE80_XSS,src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java,bad,01,"Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: Display of data in web page after using replaceAll() to remove script tags, which will still allow XSS (CWE 182: Collapse of Data into Unsafe Value)",19,ec21e935de5a162d,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+
+            response.getWriter().println(""<br>result: data = "" + data.replaceAll(""(<script>)"", """"));
+        }
+
+    }
+}
+"
+S09,Safe,CWE113_HTTP_Response_Splitting,src/testcases/CWE113_HTTP_Response_Splitting/s02/CWE113_HTTP_Response_Splitting__getParameter_Servlet_setHeaderServlet_01.java,goodB2G,01,"Juliet goodB2G(): same untrusted source, sink protected. GoodSink: URLEncode input",21,041fc47ae0d473d2,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+
+            data = URLEncoder.encode(data, ""UTF-8"");
+            response.setHeader(""Location"", ""/author.jsp?lang="" + data);
+        }
+
+    }
+}
+"
+S10,Vulnerable,CWE601_Open_Redirect,src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: place redirect string directly into redirect api call,33,65d6235c767cac3d,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write(""Invalid redirect URL"");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+"
+S11,Vulnerable,CWE36_Absolute_Path_Traversal,src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: readFile read line from file from disk,76,ffc3479d24f8d942,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, ""UTF-8"");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, ""Error with stream reading"", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing BufferedReader"", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing InputStreamReader"", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing FileInputStream"", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+"
+S12,Vulnerable,CWE113_HTTP_Response_Splitting,src/testcases/CWE113_HTTP_Response_Splitting/s02/CWE113_HTTP_Response_Splitting__getParameter_Servlet_setHeaderServlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: querystring to setHeader(),20,4742ab6c684dc8b0,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+
+            response.setHeader(""Location"", ""/author.jsp?lang="" + data);
+        }
+
+    }
+}
+"
+S13,Safe,CWE36_Absolute_Path_Traversal,src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__getParameter_Servlet_01.java,goodG2B,01,Juliet goodG2B(): data comes from a trusted source (A hardcoded string); same sink as bad().,76,293e55df68a84fa6,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = ""foo"";
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, ""UTF-8"");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, ""Error with stream reading"", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing BufferedReader"", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing InputStreamReader"", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, ""Error closing FileInputStream"", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+"
+S14,Vulnerable,CWE606_Unchecked_Loop_Condition,src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: loop variable not validated,30,986f3d29484dbd74,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine(""Invalid response. Numeric input expected. Assuming 1."");
+            numberOfLoops = 1;
+        }
+
+        for (int i=0; i < numberOfLoops; i++)
+        {
+
+            IO.writeLine(""hello world"");
+        }
+
+    }
+}
+"
+S15,Safe,CWE690_NULL_Deref_From_Return,src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_trim_01.java,goodB2G,01,"Juliet goodB2G(): same untrusted source, sink protected. GoodSink: Check data for null before calling trim()",19,146ab71efdb4907e,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+            String stringTrimmed = data.trim();
+            IO.writeLine(stringTrimmed);
+        }
+
+    }
+}
+"
+S16,Safe,CWE80_XSS,src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java,goodG2B,01,Juliet goodG2B(): data comes from a trusted source (A hardcoded string); same sink as bad().,19,6a0c90c9e3df07a4,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = ""foo"";
+
+        if (data != null)
+        {
+
+            response.getWriter().println(""<br>result: data = "" + data.replaceAll(""(<script>)"", """"));
+        }
+
+    }
+}
+"
+S17,Vulnerable,CWE89_SQL_Injection,src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_01.java,bad,01,"Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: data concatenated into SQL statement used in executeBatch(), which could result in SQL Injection",72,439a69dac8a9ff41,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+            String names[] = data.split(""-"");
+            int successCount = 0;
+            Connection dbConnection = null;
+            Statement sqlStatement = null;
+            try
+            {
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.createStatement();
+                for (int i = 0; i < names.length; i++)
+                {
+
+                    sqlStatement.addBatch(""update users set hitcount=hitcount+1 where name='"" + names[i] + ""'"");
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine(""Succeeded in "" + successCount + "" out of "" + names.length + "" queries."");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, ""Error getting database connection"", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, ""Error closing Statament"", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, ""Error closing Connection"", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+"
+S18,Safe,CWE89_SQL_Injection,src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_01.java,goodB2G,01,"Juliet goodB2G(): same untrusted source, sink protected. GoodSink: Use prepared statement and executeBatch (properly)",73,c12a3b84511e2cfb,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        if (data != null)
+        {
+            String names[] = data.split(""-"");
+            int successCount = 0;
+            Connection dbConnection = null;
+            PreparedStatement sqlStatement = null;
+            try
+            {
+
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.prepareStatement(""update users set hitcount=hitcount+1 where name=?"");
+                for (int i = 0; i < names.length; i++)
+                {
+                    sqlStatement.setString(1, names[i]);
+                    sqlStatement.addBatch();
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine(""Succeeded in "" + successCount + "" out of "" + names.length + "" queries."");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, ""Error getting database connection"", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, ""Error closing PreparedStatement"", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, ""Error closing Connection"", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+"
+S19,Safe,CWE78_OS_Command_Injection,src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java,goodG2B,01,Juliet goodG2B(): data comes from a trusted source (A hardcoded string); same sink as bad().,28,03784ede52e4f260,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = ""foo"";
+
+        String osCommand;
+        if(System.getProperty(""os.name"").toLowerCase().indexOf(""win"") >= 0)
+        {
+
+            osCommand = ""c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir "";
+        }
+        else
+        {
+
+            osCommand = ""/bin/ls "";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+"
+S20,Vulnerable,CWE78_OS_Command_Injection,src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java,bad,01,Juliet bad(): externally controlled request parameter reaches the sink without the required control. BadSink: exec dynamic command execution with Runtime.getRuntime().exec(),28,b7225c2cc7d0da1f,,https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-java-v1-3.zip,"Juliet Test Suite for Java v1.3 (2017-10-01), zip sha256=d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",Java,"import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter(""name"");
+
+        String osCommand;
+        if(System.getProperty(""os.name"").toLowerCase().indexOf(""win"") >= 0)
+        {
+
+            osCommand = ""c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir "";
+        }
+        else
+        {
+
+            osCommand = ""/bin/ls "";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+"

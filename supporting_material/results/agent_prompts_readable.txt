@@ -1,0 +1,1880 @@
+##### S01 basic ef6e01cab415612c
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String stringTrimmed = data.trim();
+
+        IO.writeLine(stringTrimmed);
+
+    }
+}
+```
+##### S01 structured d110823d63cd657a
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String stringTrimmed = data.trim();
+
+        IO.writeLine(stringTrimmed);
+
+    }
+}
+```
+##### S02 basic 723a4902f51bf2e8
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result - <img src=\"" + data + "\">");
+        }
+
+    }
+}
+```
+##### S02 structured 12ac6574c8585ea9
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result - <img src=\"" + data + "\">");
+        }
+
+    }
+}
+```
+##### S03 basic e9a8598ee9454b31
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result - <img src=\"" + data + "\">");
+        }
+
+    }
+}
+```
+##### S03 structured d5e89cc58544f8eb
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result - <img src=\"" + data + "\">");
+        }
+
+    }
+}
+```
+##### S04 basic c1931568c5820be6
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
+            numberOfLoops = 1;
+        }
+
+        if (numberOfLoops >= 0 && numberOfLoops <= 5)
+        {
+            for (int i=0; i < numberOfLoops; i++)
+            {
+                IO.writeLine("hello world");
+            }
+        }
+
+    }
+}
+```
+##### S04 structured c2c44bd311db9e15
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
+            numberOfLoops = 1;
+        }
+
+        if (numberOfLoops >= 0 && numberOfLoops <= 5)
+        {
+            for (int i=0; i < numberOfLoops; i++)
+            {
+                IO.writeLine("hello world");
+            }
+        }
+
+    }
+}
+```
+##### S05 basic 77072482a69a3905
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String xmlFile = null;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            xmlFile = "\\data\\users.xml";
+        }
+        else
+        {
+
+            xmlFile = "./data/users.xml";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split("||");
+            if (tokens.length < 2)
+            {
+                return;
+            }
+            String username = tokens[0];
+            String password = tokens[1];
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+
+            String query = "//users/user[name/text()='" + username +
+                           "' and pass/text()='" + password + "']" +
+                           "/secret/text()";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+```
+##### S05 structured 09c9041a6e3cdc81
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String xmlFile = null;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            xmlFile = "\\data\\users.xml";
+        }
+        else
+        {
+
+            xmlFile = "./data/users.xml";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split("||");
+            if (tokens.length < 2)
+            {
+                return;
+            }
+            String username = tokens[0];
+            String password = tokens[1];
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+
+            String query = "//users/user[name/text()='" + username +
+                           "' and pass/text()='" + password + "']" +
+                           "/secret/text()";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+```
+##### S06 basic 4c2175fe2bf65ef6
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+```
+##### S06 structured f24fada64c8cb583
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+```
+##### S07 basic ad13f50fe45b03f8
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String xmlFile = null;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            xmlFile = "\\data\\users.xml";
+        }
+        else
+        {
+
+            xmlFile = "./data/users.xml";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split("||");
+            if( tokens.length < 2 )
+            {
+                return;
+            }
+
+            String username = StringEscapeUtils.escapeXml(tokens[0]);
+            String password = StringEscapeUtils.escapeXml(tokens[1]);
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+            String query = "//users/user[name/text()='" + username +
+                           "' and pass/text()='" + password + "']" +
+                           "/secret/text()";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+```
+##### S07 structured aa159878b2c36d0c
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import javax.xml.xpath.*;
+import org.xml.sax.InputSource;
+import org.apache.commons.lang.StringEscapeUtils;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String xmlFile = null;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            xmlFile = "\\data\\users.xml";
+        }
+        else
+        {
+
+            xmlFile = "./data/users.xml";
+        }
+
+        if (data != null)
+        {
+
+            String [] tokens = data.split("||");
+            if( tokens.length < 2 )
+            {
+                return;
+            }
+
+            String username = StringEscapeUtils.escapeXml(tokens[0]);
+            String password = StringEscapeUtils.escapeXml(tokens[1]);
+
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            InputSource inputXml = new InputSource(xmlFile);
+            String query = "//users/user[name/text()='" + username +
+                           "' and pass/text()='" + password + "']" +
+                           "/secret/text()";
+            String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+        }
+
+    }
+}
+```
+##### S08 basic ffa90c7195a70808
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result: data = " + data.replaceAll("(<script>)", ""));
+        }
+
+    }
+}
+```
+##### S08 structured f500f6510db3b887
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result: data = " + data.replaceAll("(<script>)", ""));
+        }
+
+    }
+}
+```
+##### S09 basic 4fcc7b2dc6162f8a
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            data = URLEncoder.encode(data, "UTF-8");
+            response.setHeader("Location", "/author.jsp?lang=" + data);
+        }
+
+    }
+}
+```
+##### S09 structured 58e424729296e756
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            data = URLEncoder.encode(data, "UTF-8");
+            response.setHeader("Location", "/author.jsp?lang=" + data);
+        }
+
+    }
+}
+```
+##### S10 basic cae1cf3a52011366
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+```
+##### S10 structured 912bbbca774fbd91
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            URI uri;
+            try
+            {
+                uri = new URI(data);
+            }
+            catch (URISyntaxException exceptURISyntax)
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
+
+            response.sendRedirect(data);
+            return;
+        }
+
+    }
+}
+```
+##### S11 basic c87292ed0c2faa0f
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, "UTF-8");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+```
+##### S11 structured fc8cb06c48bd53f9
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, "UTF-8");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+```
+##### S12 basic 502fa02987b49b52
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.setHeader("Location", "/author.jsp?lang=" + data);
+        }
+
+    }
+}
+```
+##### S12 structured 0b9c0d532f95073d
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.net.URLEncoder;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+
+            response.setHeader("Location", "/author.jsp?lang=" + data);
+        }
+
+    }
+}
+```
+##### S13 basic 6a91b897363e1ad3
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, "UTF-8");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+```
+##### S13 structured 06d9ba99fee7963b
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import java.io.*;
+import javax.servlet.http.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+            File file = new File(data);
+            FileInputStream streamFileInputSink = null;
+            InputStreamReader readerInputStreamSink = null;
+            BufferedReader readerBufferdSink = null;
+            if (file.exists() && file.isFile())
+            {
+                try
+                {
+                    streamFileInputSink = new FileInputStream(file);
+                    readerInputStreamSink = new InputStreamReader(streamFileInputSink, "UTF-8");
+                    readerBufferdSink = new BufferedReader(readerInputStreamSink);
+                    IO.writeLine(readerBufferdSink.readLine());
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+                }
+                finally
+                {
+
+                    try
+                    {
+                        if (readerBufferdSink != null)
+                        {
+                            readerBufferdSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (readerInputStreamSink != null)
+                        {
+                            readerInputStreamSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
+                    }
+
+                    try
+                    {
+                        if (streamFileInputSink != null)
+                        {
+                            streamFileInputSink.close();
+                        }
+                    }
+                    catch (IOException exceptIO)
+                    {
+                        IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
+                    }
+                }
+            }
+        }
+
+    }
+}
+```
+##### S14 basic bce3dff57be0ce71
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
+            numberOfLoops = 1;
+        }
+
+        for (int i=0; i < numberOfLoops; i++)
+        {
+
+            IO.writeLine("hello world");
+        }
+
+    }
+}
+```
+##### S14 structured 453341e90229bc38
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        int numberOfLoops;
+        try
+        {
+            numberOfLoops = Integer.parseInt(data);
+        }
+        catch (NumberFormatException exceptNumberFormat)
+        {
+            IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
+            numberOfLoops = 1;
+        }
+
+        for (int i=0; i < numberOfLoops; i++)
+        {
+
+            IO.writeLine("hello world");
+        }
+
+    }
+}
+```
+##### S15 basic 7de75b6fdb50b0e8
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String stringTrimmed = data.trim();
+            IO.writeLine(stringTrimmed);
+        }
+
+    }
+}
+```
+##### S15 structured f5a9fa233444e4a8
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String stringTrimmed = data.trim();
+            IO.writeLine(stringTrimmed);
+        }
+
+    }
+}
+```
+##### S16 basic a960d2f6f4d962ca
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result: data = " + data.replaceAll("(<script>)", ""));
+        }
+
+    }
+}
+```
+##### S16 structured 5a28f3cf0abe85f1
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        if (data != null)
+        {
+
+            response.getWriter().println("<br>result: data = " + data.replaceAll("(<script>)", ""));
+        }
+
+    }
+}
+```
+##### S17 basic 254702d76d6d13c2
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String names[] = data.split("-");
+            int successCount = 0;
+            Connection dbConnection = null;
+            Statement sqlStatement = null;
+            try
+            {
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.createStatement();
+                for (int i = 0; i < names.length; i++)
+                {
+
+                    sqlStatement.addBatch("update users set hitcount=hitcount+1 where name='" + names[i] + "'");
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine("Succeeded in " + successCount + " out of " + names.length + " queries.");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, "Error getting database connection", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Statament", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+```
+##### S17 structured ba222774937a87f0
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String names[] = data.split("-");
+            int successCount = 0;
+            Connection dbConnection = null;
+            Statement sqlStatement = null;
+            try
+            {
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.createStatement();
+                for (int i = 0; i < names.length; i++)
+                {
+
+                    sqlStatement.addBatch("update users set hitcount=hitcount+1 where name='" + names[i] + "'");
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine("Succeeded in " + successCount + " out of " + names.length + " queries.");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, "Error getting database connection", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Statament", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+```
+##### S18 basic 796c679be9319572
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String names[] = data.split("-");
+            int successCount = 0;
+            Connection dbConnection = null;
+            PreparedStatement sqlStatement = null;
+            try
+            {
+
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.prepareStatement("update users set hitcount=hitcount+1 where name=?");
+                for (int i = 0; i < names.length; i++)
+                {
+                    sqlStatement.setString(1, names[i]);
+                    sqlStatement.addBatch();
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine("Succeeded in " + successCount + " out of " + names.length + " queries.");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, "Error getting database connection", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+```
+##### S18 structured 89deedaf817a817d
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+import java.sql.*;
+import java.util.logging.Level;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        if (data != null)
+        {
+            String names[] = data.split("-");
+            int successCount = 0;
+            Connection dbConnection = null;
+            PreparedStatement sqlStatement = null;
+            try
+            {
+
+                dbConnection = IO.getDBConnection();
+                sqlStatement = dbConnection.prepareStatement("update users set hitcount=hitcount+1 where name=?");
+                for (int i = 0; i < names.length; i++)
+                {
+                    sqlStatement.setString(1, names[i]);
+                    sqlStatement.addBatch();
+                }
+                int resultsArray[] = sqlStatement.executeBatch();
+                for (int i = 0; i < names.length; i++)
+                {
+                    if (resultsArray[i] > 0)
+                    {
+                        successCount++;
+                    }
+                }
+                IO.writeLine("Succeeded in " + successCount + " out of " + names.length + " queries.");
+            }
+            catch (SQLException exceptSql)
+            {
+                IO.logger.log(Level.WARNING, "Error getting database connection", exceptSql);
+            }
+            finally
+            {
+                try
+                {
+                    if (sqlStatement != null)
+                    {
+                        sqlStatement.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
+                }
+
+                try
+                {
+                    if (dbConnection != null)
+                    {
+                        dbConnection.close();
+                    }
+                }
+                catch (SQLException exceptSql)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
+                }
+            }
+        }
+
+    }
+}
+```
+##### S19 basic 98a12ae17b73388a
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        String osCommand;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            osCommand = "c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir ";
+        }
+        else
+        {
+
+            osCommand = "/bin/ls ";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+```
+##### S19 structured 5dda00f5f31cd48c
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = "foo";
+
+        String osCommand;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            osCommand = "c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir ";
+        }
+        else
+        {
+
+            osCommand = "/bin/ls ";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+```
+##### S20 basic 45c48ad2553fb025
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String osCommand;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            osCommand = "c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir ";
+        }
+        else
+        {
+
+            osCommand = "/bin/ls ";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+```
+##### S20 structured 5d885108769c9430
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+import javax.servlet.http.*;
+
+public class RequestHandler extends HttpServlet
+{
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    {
+        String data;
+
+        data = request.getParameter("name");
+
+        String osCommand;
+        if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+        {
+
+            osCommand = "c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir ";
+        }
+        else
+        {
+
+            osCommand = "/bin/ls ";
+        }
+
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+
+    }
+}
+```

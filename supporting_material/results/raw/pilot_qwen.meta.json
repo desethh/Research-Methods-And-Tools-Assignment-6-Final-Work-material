@@ -1,0 +1,28 @@
+{
+  "run_id": "pilot_qwen",
+  "backend": "ollama",
+  "model": "qwen3.5:9b",
+  "started_utc": "2026-10-20T19:47:48.910662+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.3",
+  "think": false,
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+      "qwen35"
+    ],
+    "parameter_size": "9.7B",
+    "quantization_level": "Q4_K_M"
+  },
+  "ollama_version": "0.40.3",
+  "model_default_parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 2048
+  }
+}

@@ -1,0 +1,11 @@
+run_id,model,role,condition,n,tp,tn,fp,fn,accuracy,precision,recall,f1,unparsed,mean_output_tokens
+qwen_primary,Qwen3.5:9B,primary,basic,20,7,4,6,3,0.55,0.5385,0.7,0.6087,0,7.7
+qwen_primary,Qwen3.5:9B,primary,structured,20,8,7,3,2,0.75,0.7273,0.8,0.7619,1,492.4
+qwen_rep2,Qwen3.5:9B,repeat,basic,20,7,4,6,3,0.55,0.5385,0.7,0.6087,0,7.7
+qwen_rep2,Qwen3.5:9B,repeat,structured,20,8,7,3,2,0.75,0.7273,0.8,0.7619,1,492.4
+qwen_rep3,Qwen3.5:9B,repeat,basic,20,7,4,6,3,0.55,0.5385,0.7,0.6087,0,7.7
+qwen_rep3,Qwen3.5:9B,repeat,structured,20,8,7,3,2,0.75,0.7273,0.8,0.7619,1,492.4
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,basic,20,10,3,7,0,0.65,0.5882,1.0,0.7407,3,870.5
+qwen_think_exploratory,Qwen3.5:9B (thinking on),exploratory,structured,20,8,3,7,2,0.55,0.5333,0.8,0.64,9,1758.8
+claude_agents,Claude Sonnet (subagent),secondary,basic,20,10,9,1,0,0.95,0.9091,1.0,0.9524,0,
+claude_agents,Claude Sonnet (subagent),secondary,structured,20,9,10,0,1,0.95,1.0,0.9,0.9474,0,

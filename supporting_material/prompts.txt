@@ -1,0 +1,39 @@
+PROMPT DEFINITIONS (frozen 2026-10-21 before the primary run; identical for every model)
+================================================================================
+The placeholder {code} is replaced by the anonymized Java snippet (data/snippets/SXX.java).
+Both conditions share the same task sentence, the same label set and the same JSON output
+schema. The only manipulated factor is the presence of the five-step data-flow procedure.
+
+--------------------------------------------------------------------------------
+[BASIC]
+--------------------------------------------------------------------------------
+Analyze the following Java source code and determine whether it contains a security vulnerability. Return exactly one label: Vulnerable or Safe.
+
+Respond with only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+{code}
+```
+
+--------------------------------------------------------------------------------
+[STRUCTURED]
+--------------------------------------------------------------------------------
+Analyze the following Java source code and determine whether it contains a security vulnerability. Work through these steps:
+1. Untrusted inputs: identify every externally controlled input (for example request parameters, headers, cookies, files, network data or environment values).
+2. Data flow: trace how each untrusted input flows through the code to security-sensitive operations (for example database queries, OS commands, file system access, HTTP responses and headers, or other sensitive operations).
+3. Security controls: check whether validation, sanitization, encoding, parameterization or other relevant checks are applied on each path before the data reaches the sensitive operation.
+4. Evidence: decide whether the code shown provides sufficient evidence that untrusted data can reach a sensitive operation without an adequate control. Do not label code as vulnerable only because it uses an API that could be dangerous.
+5. Classification: give a final binary label, Vulnerable or Safe.
+
+Write your analysis briefly, step by step, and end your response with a final line containing only a JSON object of the form {"label": "Vulnerable"} or {"label": "Safe"}.
+
+```java
+{code}
+```
+
+--------------------------------------------------------------------------------
+[CLAUDE-AGENT WRAPPER]  (used only for the Claude subagent conditions, identical for both)
+--------------------------------------------------------------------------------
+You are acting as an isolated code classifier. Do not use any tools and do not read any files; base your answer only on the text below. Reply with your answer only.
+
+<the BASIC or STRUCTURED prompt above, with the snippet inserted>

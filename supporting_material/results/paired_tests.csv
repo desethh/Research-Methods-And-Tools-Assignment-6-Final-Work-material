@@ -1,0 +1,6 @@
+run_id,model,n,f1_basic,f1_structured,delta_f1,delta_precision,delta_recall,delta_accuracy,discordant_basic_only_correct,discordant_structured_only_correct,mcnemar_exact_p,boot95_delta_f1_low,boot95_delta_f1_high
+qwen_primary,Qwen3.5:9B,20,0.6087,0.7619,0.1532,0.1888,0.1,0.2,2,6,0.2891,-0.0084,0.3273
+qwen_rep2,Qwen3.5:9B,20,0.6087,0.7619,0.1532,0.1888,0.1,0.2,2,6,0.2891,-0.0084,0.3273
+qwen_rep3,Qwen3.5:9B,20,0.6087,0.7619,0.1532,0.1888,0.1,0.2,2,6,0.2891,-0.0084,0.3273
+qwen_think_exploratory,Qwen3.5:9B (thinking on),20,0.7407,0.64,-0.1007,-0.0549,-0.2,-0.1,4,2,0.6875,-0.25,0.0285
+claude_agents,Claude Sonnet (subagent),20,0.9524,0.9474,-0.005,0.0909,-0.1,0.0,1,1,1.0,-0.1765,0.1304
